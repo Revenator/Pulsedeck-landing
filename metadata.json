@@ -1,0 +1,6 @@
+{
+  "name": "PulseDeck",
+  "description": "DevOps & Cloudflare command center with telemetry simulation, portable workspace configurations, and AI diagnostics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
