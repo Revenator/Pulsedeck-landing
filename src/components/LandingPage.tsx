@@ -91,7 +91,9 @@ export default function LandingPage({ onLaunchDemo }: LandingPageProps) {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Main Content Area */}
+      <main>
+        {/* Hero Section */}
       <section id="hero" className="relative pt-20 pb-24 px-6 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0,transparent_60%)] pointer-events-none" />
         
@@ -498,6 +500,7 @@ export const DEFAULT_TENANTS = [
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-12 px-6 text-center text-slate-500 text-xs font-mono">
