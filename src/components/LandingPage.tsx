@@ -14,7 +14,9 @@ import {
   DollarSign, 
   RefreshCw,
   Sliders,
-  Download
+  Download,
+  HelpCircle,
+  ChevronDown
 } from "lucide-react";
 import PulseDeckIcon from "./PulseDeckIcon";
 
@@ -26,10 +28,38 @@ export default function LandingPage({ onLaunchDemo }: LandingPageProps) {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [email, setEmail] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
+
+  const faqs = [
+    {
+      q: "What is PulseDeck?",
+      a: "PulseDeck is a self-hosted, privacy-first DevOps and SRE command center web application that aggregates real-time metrics from Cloudflare CDN edge infrastructure, GitHub Actions CI/CD workflows, and Google Gemini AI token consumption into a unified dashboard."
+    },
+    {
+      q: "How does PulseDeck monitor Cloudflare edge traffic and purge caches?",
+      a: "PulseDeck integrates with the Cloudflare API via secure server-side Express proxies, providing live visibility into edge requests, unique visitors, bandwidth delivered, DNS query surges, and instant one-click cache purging per zone."
+    },
+    {
+      q: "How does PulseDeck monitor GitHub Actions pipelines?",
+      a: "PulseDeck connects to GitHub repository workflows to display real-time commit statuses, build pass rates, open pull requests, and automated failure detection with webhook alerts."
+    },
+    {
+      q: "How does Gemini AI token observability and incident reporting work?",
+      a: "PulseDeck tracks Gemini model token burn, daily budget thresholds, and cost estimations, providing automated server-side AI incident analysis reports during build or traffic anomalies."
+    },
+    {
+      q: "Is PulseDeck self-hosted and private?",
+      a: "Yes. PulseDeck is 100% self-hosted with no external telemetry collection or third-party middleman servers. All API credentials remain protected server-side behind Express proxy routes."
+    },
+    {
+      q: "What is included in the £50 commercial license?",
+      a: "The £50 single purchase license grants full commercial access to the React, Express, and Recharts source code, multi-tenant workspace architecture, 4 brand color themes, offline simulation control room, and lifetime updates with no recurring subscription fees."
+    }
+  ];
 
   const handlePurchase = (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,9 +97,11 @@ export default function LandingPage({ onLaunchDemo }: LandingPageProps) {
           
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
             <a href="#features" className="hover:text-emerald-400 transition-colors font-mono">Features</a>
-            <a href="#privacy" className="hover:text-emerald-400 transition-colors font-mono">Privacy First</a>
+            <a href="#v3-upgrades" className="hover:text-emerald-400 transition-colors font-mono">Specs</a>
+            <a href="#privacy" className="hover:text-emerald-400 transition-colors font-mono">Privacy</a>
+            <a href="#faq" className="hover:text-emerald-400 transition-colors font-mono">FAQ</a>
             <a href="#pricing" className="hover:text-emerald-400 transition-colors font-mono">Pricing</a>
-            <a href="#v3-upgrades" className="text-white bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30 text-xs font-mono">Self-Hosted</a>
+            <span className="text-white bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30 text-xs font-mono">Self-Hosted</span>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -430,10 +462,67 @@ export const DEFAULT_TENANTS = [
         </div>
       </section>
 
+      {/* FAQ Section (Crawlable & Rich Results Optimized) */}
+      <section id="faq" className="py-24 px-6 border-t border-white/5 bg-[#09090B] relative">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Frequently Asked Questions</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+              Everything You Need to Know About PulseDeck
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              Answers to technical architecture, telemetry capabilities, self-hosting privacy, and commercial licensing questions.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div 
+                  key={index} 
+                  className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
+                    isOpen 
+                      ? "bg-[#111114] border-emerald-500/30 shadow-lg shadow-emerald-500/5" 
+                      : "bg-white/[0.02] border-white/5 hover:border-white/10"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    id={`faq-question-${index}`}
+                  >
+                    <span className="font-bold text-white text-base leading-snug">{faq.q}</span>
+                    <ChevronDown className={`w-5 h-5 text-emerald-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {isOpen && (
+                    <div 
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
+                      className="px-6 pb-5 pt-1 text-slate-400 text-sm leading-relaxed border-t border-white/5"
+                    >
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="pricing" className="py-24 px-6 border-t border-white/5 bg-[#09090B] relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-xs font-mono font-bold uppercase text-emerald-400 tracking-widest mb-3">Simple Commercial License</h2>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">PulseDeck Single Purchase</h3>
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
               No subscription models. Secure full commercial access to the PulseDeck v3.0.0 SaaS template, server-side Express proxies, and lifetime simulation modules.
@@ -508,7 +597,10 @@ export const DEFAULT_TENANTS = [
           <p>© 2026 PulseDeck DevOps SRE command center. Open-source commercial template under Apache 2.0 license.</p>
           <div className="flex space-x-6">
             <a href="#features" className="hover:text-emerald-400 transition-colors">Features</a>
+            <a href="#v3-upgrades" className="hover:text-emerald-400 transition-colors">Specs</a>
             <a href="#privacy" className="hover:text-emerald-400 transition-colors">Privacy</a>
+            <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
+            <a href="#pricing" className="hover:text-emerald-400 transition-colors">Pricing</a>
             <a href="#landing-root" className="hover:text-emerald-400 transition-colors">Back to top</a>
           </div>
         </div>

@@ -1,58 +1,215 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>PulseDeck | Next-Gen DevOps SRE Command Center & Cloud Telemetry</title>
 
-    <!-- SEO Meta Tags -->
+    <!-- Primary SEO Meta Tags -->
+    <meta name="title" content="PulseDeck | Next-Gen DevOps SRE Command Center & Cloud Telemetry" />
     <meta name="description" content="PulseDeck is a self-hosted SRE command center for unified telemetry monitoring across Cloudflare edge traffic, GitHub Actions CI/CD pipelines, and Gemini AI token budgets with automated diagnostics." />
-    <meta name="author" content="PulseDeck DevOps Command Center" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#09090b" />
+    <meta name="keywords" content="PulseDeck, SRE command center, DevOps dashboard, Cloudflare telemetry, GitHub Actions monitoring, CI/CD observability, Gemini AI token tracker, edge traffic monitor, self-hosted dashboard, incident response" />
+    <meta name="author" content="PulseDeck" />
+    <meta name="publisher" content="PulseDeck" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="theme-color" content="#09090B" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="application-name" content="PulseDeck" />
+    <meta name="apple-mobile-web-app-title" content="PulseDeck" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="canonical" href="https://pulsedeck.dev" />
 
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322d3ee'/%3E%3Cstop offset='100%25' stop-color='%231d4ed8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='44' fill='%230b0f19' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M22 50 L32 50 L36 40 L41 60 L46 32 L51 68 L56 46 L61 54 L65 50 L78 50' stroke='url(%23g)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+    <!-- Web App Manifest & Favicons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:site_name" content="PulseDeck" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pulsedeck.dev" />
     <meta property="og:title" content="PulseDeck | Next-Gen DevOps SRE Command Center" />
     <meta property="og:description" content="Unified observability for Cloudflare CDN, GitHub Actions CI/CD pipelines, and Gemini AI telemetry. Self-hosted, private, and portable." />
-    <meta property="og:image" content="https://pulsedeck.dev/og-image.png" />
+    <meta property="og:image" content="https://pulsedeck.dev/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PulseDeck Next-Gen DevOps SRE Command Center interface preview" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://pulsedeck.dev" />
     <meta name="twitter:title" content="PulseDeck | Next-Gen DevOps SRE Command Center" />
     <meta name="twitter:description" content="Self-hosted SRE command center for monitoring Cloudflare traffic, GitHub VCS pipelines, and AI usage budgets." />
-    <meta name="twitter:image" content="https://pulsedeck.dev/og-image.png" />
+    <meta name="twitter:image" content="https://pulsedeck.dev/og-image.svg" />
+    <meta name="twitter:image:alt" content="PulseDeck DevOps Command Center interface preview" />
 
-    <!-- Structured Data (JSON-LD) for Google Search Rich Snippets -->
+    <!-- Structured Data (JSON-LD) Multi-Schema Graph for Google Search Rich Snippets -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "PulseDeck",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Linux, macOS, Windows, Cloud Infrastructure",
-      "description": "PulseDeck v3.0.0 is a self-hosted SRE command center template integrating Cloudflare Edge telemetry, GitHub Actions build pipelines, and Gemini AI diagnostics into a unified real-time dashboard.",
-      "offers": {
-        "@type": "Offer",
-        "price": "50.00",
-        "priceCurrency": "GBP",
-        "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "128"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pulsedeck.dev/#website",
+          "url": "https://pulsedeck.dev",
+          "name": "PulseDeck",
+          "description": "Next-Gen DevOps SRE Command Center and Cloud Telemetry Dashboard",
+          "publisher": {
+            "@id": "https://pulsedeck.dev/#organization"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pulsedeck.dev/#organization",
+          "name": "PulseDeck",
+          "url": "https://pulsedeck.dev",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pulsedeck.dev/icon.svg",
+            "width": 120,
+            "height": 120
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://pulsedeck.dev/#software",
+          "name": "PulseDeck",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Linux, macOS, Windows, Cloud Infrastructure, Docker, Kubernetes",
+          "softwareVersion": "3.0.0",
+          "description": "PulseDeck v3.0.0 is a self-hosted SRE command center template integrating Cloudflare Edge telemetry, GitHub Actions build pipelines, and Gemini AI diagnostics into a unified real-time dashboard.",
+          "offers": {
+            "@type": "Offer",
+            "price": "50.00",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://pulsedeck.dev/#pricing",
+            "seller": {
+              "@id": "https://pulsedeck.dev/#organization"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "128",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "featureList": [
+            "Real-time Cloudflare CDN Edge Traffic Telemetry & Instant Cache Purge",
+            "GitHub Actions CI/CD Pipeline Status & PR Tracking",
+            "Google Gemini AI Token Burn Tracking & SRE Diagnostics",
+            "Multi-Tenant Workspace Configuration & Creation",
+            "100% Self-Hosted Privacy-First Architecture with Express Proxies",
+            "Theme-Ready White-Labeling with 4 Presets",
+            "Offline Simulation Control Room (Spike, Outage, Normal)",
+            "Portable JSON Workspace Backup & Import"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://pulsedeck.dev/#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://pulsedeck.dev"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Features",
+              "item": "https://pulsedeck.dev/#features"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Pricing",
+              "item": "https://pulsedeck.dev/#pricing"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://pulsedeck.dev/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is PulseDeck?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PulseDeck is a self-hosted, privacy-first DevOps and SRE command center web application that aggregates real-time metrics from Cloudflare CDN edge infrastructure, GitHub Actions CI/CD workflows, and Google Gemini AI token consumption into a unified dashboard."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does PulseDeck monitor Cloudflare edge traffic and purge caches?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PulseDeck integrates with the Cloudflare API via secure server-side Express proxies, providing live visibility into edge requests, unique visitors, bandwidth delivered, DNS query surges, and instant one-click cache purging per zone."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does PulseDeck monitor GitHub Actions pipelines?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PulseDeck connects to GitHub repository workflows to display real-time commit statuses, build pass rates, open pull requests, and automated failure detection with webhook alerts."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Gemini AI token observability and incident reporting work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PulseDeck tracks Gemini model token burn, daily budget thresholds, and cost estimations, providing automated server-side AI incident analysis reports during build or traffic anomalies."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is PulseDeck self-hosted and private?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. PulseDeck is 100% self-hosted with no external telemetry collection or third-party middleman servers. All API credentials remain protected server-side."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is included in the £50 commercial license?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The £50 single purchase license grants full commercial access to the React, Express, and Recharts source code, multi-tenant workspace architecture, 4 brand color themes, offline simulation control room, and lifetime updates."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
   </head>
   <body>
+    <noscript>
+      <div style="padding: 2rem; background: #09090b; color: #f1f5f9; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+        <h1>PulseDeck - Next-Gen DevOps SRE Command Center</h1>
+        <p>Unified real-time telemetry monitoring for Cloudflare edge infrastructure, GitHub Actions CI/CD pipelines, and Google Gemini AI token consumption.</p>
+        <h2>Key Modules & Capabilities:</h2>
+        <ul>
+          <li><strong>Cloudflare Edge CDN Telemetry:</strong> Live DNS surge monitoring, cache hit ratio tracking, and global cache purge triggers.</li>
+          <li><strong>GitHub Actions Observability:</strong> Real-time build status, pull request tracking, and automated failure alert webhooks.</li>
+          <li><strong>Google Gemini AI Diagnostics:</strong> Token quota tracker, budget cost alerts, and automated AI incident analysis.</li>
+          <li><strong>Multi-Tenant Workspace:</strong> Create, manage, and isolate separate client projects and domain settings.</li>
+          <li><strong>Self-Hosted & Private:</strong> 100% data privacy with secure server-side Express proxies.</li>
+        </ul>
+        <p>Single commercial license: £50 GBP with no recurring subscriptions. Please enable JavaScript to access the interactive dashboard.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

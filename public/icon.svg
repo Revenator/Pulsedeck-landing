@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad-pulse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <radialGradient id="grad-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#09090B" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="#0E0E12" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+  <circle cx="60" cy="60" r="50" fill="url(#grad-glow)" />
+  <g transform="translate(60, 60)">
+    <circle cx="0" cy="0" r="38" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    <path d="M-36 0 L-20 0 L-14 -16 L-6 18 L2 -22 L10 24 L18 -10 L24 6 L30 0 L36 0" fill="none" stroke="url(#grad-pulse)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="2" cy="-22" r="3" fill="#10B981" />
+    <circle cx="10" cy="24" r="3" fill="#06B6D4" />
+  </g>
+</svg>

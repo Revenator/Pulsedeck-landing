@@ -1,4 +1,21 @@
+# PulseDeck Robots.txt for Google & Major Search Crawlers
 User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.json$
+
+User-agent: Googlebot
+Allow: /
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.css$
+Allow: /*.js$
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://pulsedeck.dev/sitemap.xml
+Host: https://pulsedeck.dev
