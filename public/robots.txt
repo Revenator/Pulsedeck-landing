@@ -17,5 +17,5 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://pulsedeck.dev/sitemap.xml
-Host: https://pulsedeck.dev
+Sitemap: https://pulsedeck.uk/sitemap.xml
+Host: https://pulsedeck.uk
