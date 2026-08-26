@@ -18,4 +18,3 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: https://pulsedeck.uk/sitemap.xml
-Host: https://pulsedeck.uk
